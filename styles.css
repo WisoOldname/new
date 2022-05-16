@@ -10,7 +10,7 @@ body
     width: 100%;
     height: 70vh;
 
-    background: url('../images/space.jpg') center no-repeat;
+    background: url('../main/images/space.jpg') center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -20,7 +20,7 @@ body
     width: 100%;
     height: 60vh;
 
-    background: url('../images/background outro.jpg') center no-repeat;
+    background: url('../main/images/background outro.jpg') center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -37,7 +37,7 @@ body
     justify-content: center;
     width: 100%;
     height: 100%;
-	background: url('../images/background7.jpg') center no-repeat;
+	background: url('../main/images/background7.jpg') center no-repeat;
 }
 .widthblock{
 	display: flex;
@@ -83,7 +83,7 @@ width: 50%;
 height: 60vh;
 overflow: hidden;
 display: inline-block;
-background: url('../images/side4.jpg') no-repeat;
+background: url('../main/images/side4.jpg') no-repeat;
 flex-direction: column;
 }
 .rightblock{
@@ -91,7 +91,7 @@ width: 49%;
 height: 60vh;
 overflow: hidden;
 float: right;
-background: url('../images/side4.jpg') no-repeat;
+background: url('../main/images/side4.jpg') no-repeat;
 flex-direction: column;
 }
 
