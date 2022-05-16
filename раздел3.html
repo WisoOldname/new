@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+    <title>Роздiл 3</title>
+	<base target="_blank">
+   </head>
+
+<link rel="stylesheet" href= "styles.css">
+
+ <body>
+ <div class="navblock">
+	<div>
+		<table align="left">
+			<tbody>
+				<tr>
+					<td><a class="neon_link" href="index.html" target="_self"><span></span> <span></span> <span></span> <span></span> Головна</a></td>
+					<td><a class="neon_link" href="раздел1.html" target="_self"><span></span> <span></span> <span></span> <span></span> Роздiл 1</a></td>
+					<td><a class="neon_link" href="раздел2.html" target="_self"><span></span> <span></span> <span></span> <span></span>Роздiл 2</a></td>
+				<tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div>
+	<p style="width: 60%;">
+		Цей сайт дуже схожий на мою попередню роботу, боя взяв вже iснуючий CSS файл,
+		та трохи переробив його для нових потреб. Навiщо робити все з нуля, якщо можна робити не з нуля?
+		Iнколи, я використовував тег "style", можливо, було б краще зробити один селектор,
+		але Їх i так багато, а використовувати цей тег нiхто не забороняв...
+		Для розмiщення деяких елементiв у ряд, я використовував таблицi,
+		можливо, це не правильно, але нiхто не забороняв...
+		Дуже багато часу було витрачено на пошук картинок для фонiв, та скрiншоти iз "гри".
+		Менi був потрiбен дизайн, який не викликає бажання закрити WEB-сайт та викинути
+		монiтор у вiкно. Все виглядає нормально, кольори пiдходять один до одного,
+		вони не занадто яскравi, а самi сторiнки виглядають простими, але є в них щось привабливе,
+		якийсь шарм. Лише трейлер стане соромом, який буде ще довго переслiдувати мене. 
+	</p>
+	<h1 style="width: 60%;" align="center">Цiкавi рiшення</h1>
+	
+		<h2 align="center">Я майже усюди використовував %:</h2>
+	<div class="code">
+		<table>
+			<tbody>
+				<tr>
+				<td>
+		<pre><code>
+	.navblock{
+	display: flex;
+    
+	width: 100%;
+	height: 15%;	
+	background-color: #107800;
+	}
+		</code></pre>
+				</td>
+	<td>
+	<pre><code>
+	.block{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	width: 50%;
+	height: 60px;	
+	}
+	</code></pre>
+	</td>
+	<td>
+		<pre><code>
+		.code{
+		width: 100%;
+		height: 100%;
+		background-color: #808080;
+		font-size: 18pt;
+		}		
+		</pre></code>
+	</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>
+<p style="width: 60%;" >
+	По-перше, я вирiшив, що це набагато легше i краще, нiж рахувати кожний пiксель.
+	По-друге, менi здавалося, що таким чином, можна зберегти масштаб елементiв сторiнки ба будь-яких екранах.
+	Однин блок займає 100% ширини сторiнки, у ньому декiлька блокiв, якi займають, наприклад, по 20% цього блоку.
+	Якщо розмiр екрану змiниться, цi блоки збережуть своЇ розмiри.
+</p>
+<h2>Секретна сторiнка</h2>
+
+<p style="width: 60%;">
+Насправдi, все дуже просто. На сторiнцi є текст та кнопки, але вони прихованi.
+Натискання кнопки робить приховує та показує певнi елементи сторiнки.
+Але останнi двi або виводять текст, або переходять на iншу сторiнку.
+Для чого взагалi ця сторiнка? За сюжетом гри головний герой перемагає iнопланетних загарбникiв,
+але щось йде не так, i Земля всеодно зруйнована. Такi наслiдки його не влаштовують,
+тому весь Всесвiт повертається на декiлька хвилин назад, якось...
+Замiсть того, щоб знови починати безглузду битву, головний iнопришеленець починає
+говорити всякi клішовані фрази. Взагалi, цей дiалог повинен був бути довшим,
+але перекладати все украЇнською мовою для мене занадто.
+</p>
+<div class="code">
+		<table>
+			<tbody>
+				<tr>
+				<td>
+		<pre><code>
+		cont.style.visibility = "Hidden";
+		words.style.visibility = "hidden";
+		choice.style.visibility = "hidden";
+		good.style.visibility = "hidden";
+		bad.style.visibility = "hidden";
+		</code></pre>
+				</td>
+	<td>
+	<pre><code>
+	beg.onclick = function(){
+	words.style.visibility = "visible";
+	cont.style.visibility = "visible";
+	beg.style.visibility = "hidden";
+	};
+	</code></pre>
+	</td>
+	<td>
+		<pre><code>
+	cont.onclick = function(){
+	choice.style.visibility = "visible";
+	good.style.visibility = "visible";
+	bad.style.visibility = "visible";
+	cont.style.visibility = "Hidden";
+	}
+		</pre></code>
+	</td>
+	</tr>
+		<tr>
+			<td>
+			<pre><code>
+		bad.onclick = function(){
+		let div = document.createElement('div');
+		good.style.visibility = "hidden";
+		div.innerHTML = "<strong>ТАК ТОМУ И БЫТЬ</strong>";
+		div.style.fontSize = '30pt' ;
+		document.body.append(div);
+		}
+	</code></pre>
+			</td>
+			<td>
+			<pre><code>
+			good.onclick = function(){
+			top.location.href="good_ending.html";
+			}
+			</pre></code>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	</div>
+<h2>Картинки</h2>
+<p style="width: 60%;">
+Я просто дописав псевдоклас "hover", щоб вони змiнювали розмiр та положення при наведеннi курсору.
+Якщо чесно, я взагалi не думав, що це спрацює з картинками, я просто вирiшив спробувати...
+</p>
+<div class="code">
+		<table>
+			<tbody>
+				<tr>
+				<td>
+		<pre><code>
+		.screenshot:hover{
+		display: block;
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: scale(4.4);
+		}
+		</code></pre>
+				</td>
+	<td>
+	<pre><code>
+	.devscreenshot:hover{
+	display: block;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: scale(2.8);	
+	}
+	</code></pre>
+	</td>
+	<td>
+		<pre><code>
+	.devscreenshot_left:hover{
+	display: block;
+	position: relative;
+	top: 50%;
+	left: -60%;
+	transform: scale(2.8);	
+	}	
+		</pre></code>
+	</td>
+	<td>
+	<pre><code>
+	.leftimg:hover{
+	display: block;
+	position: relative;
+    right: -35%;
+	transform: scale(2.6);
+	}
+	</pre></code>
+	</td>
+	<td>
+	<pre><code>
+	.rightimg:hover{
+	display: block;
+	position: relative;
+    right: 35%;
+	transform: scale(2.6);
+	}
+	</pre></code>
+	</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
